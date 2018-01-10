@@ -8,10 +8,15 @@
   font-weight: bold;
   text-shadow: 1px 1px 1px white;
   border-radius: 50%;
-  background-color: #03e403b0;
+  background-color: #94ea97;
   box-shadow: .5px  1px 2px black;
 }
 
 .btn:focus,.btn:active {
    outline: none !important;
+}
+
+.result {
+  min-height: 10vh;
+  min-width: 500px;
 }

@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $('#gif-search-btn').click(function() {
+  $('form#search').submit(function(event) {
+    event.preventDefault();
     const gifs = $('#gif-search-input').val();
     $('#gif-search-input').val("");
     $.ajax({
@@ -9,7 +10,9 @@ $(document).ready(function() {
         format: 'json'
       },
       success: function(response) {
-        $('.result').append(`${gifs}: <br> ${response.embed_url}`);
+        for (var i = 0; i < 5; i++){
+          $('.result').append(`<img src="${response.data[i].images.fixed_height.url}">`);
+        }
       },
       error: function() {
         $('#errors').text("There was an error processing your request. Please try again.")
