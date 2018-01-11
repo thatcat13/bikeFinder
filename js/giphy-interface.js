@@ -5,12 +5,26 @@ $(document).ready(function() {
   $('form#search').submit(function(event) {
     event.preventDefault();
     $('.result').empty();
-    const gifs = $('#gif-search-input').val();
+    const inputTopic = $('#gif-search-input').val();
     $('#gif-search-input').val("");
-    const newRequest = new GiphyLand(gifs);
-  
-  });
-});
+    const newRequest = new GiphyLand(inputTopic);
+    let userArray = [];
+
+    newRequest.getGiphs(callback, inputTopic);
+  }); //submit
+  function callback(userArray){
+    let a = Math.floor(Math.random() * 45) + 1;
+    let b = a + 5;
+    for (var i = a; i < b; i++){
+      $('.result').append(`<img class="gif-place" src="${response.data[i].images.fixed_height.url}">`);
+    }
+  }//callback
+
+  // , function(){
+  //     $('#errors').text("There was an error processing your request. Please try again.");
+  //   }
+
+});//document
 
 
 

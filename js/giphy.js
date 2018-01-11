@@ -5,8 +5,9 @@ export class GiphyLand {
     this.inputTopic = inputTopic;
     this.outputGifs = this.getGiphs();
   }
+  getGiphs(callback, inputTopic){
+    let newArray = [];
 
-  getGiphs(){
     $.ajax({
       url: `http://api.giphy.com/v1/gifs/search?q=${this.inputTopic}&api_key=${apiKey}&limit=50`,
       type: 'GET',
@@ -14,21 +15,22 @@ export class GiphyLand {
         format: 'json'
       },
       success: function(response) {
-        let a = Math.floor(Math.random() * 45) + 1;
-        let b = a + 5;
-        for (var i = a; i < b; i++){
-          console.log(i + "i");
-          $('.result').append(`<img class="gif-place" src="${response.data[i].images.fixed_height.url}">`);
-        }
+        console.log(`Success`);
+      },
+      complete: function(response) {
+        console.log('complete');
+        let it = JSON.parse(response.responseText);
+        console.log(it);
+        newArray.push(it);
+        console.log("newArray " + newArray);
+        callback(it);
+      },
 
-        // complete: function(){
-        //
-        // }
+      error: function(response) {
+        console.log('error!');
 
-      },//success
-      error: function() {
-        $('#errors').text("There was an error processing your request. Please try again.");
       }
     });//ajax
-  } //getGiphs()
-}//GetGiphy
+  } //getGiphs() method
+
+}//GiphyLand class
