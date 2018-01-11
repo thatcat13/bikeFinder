@@ -8,8 +8,24 @@ $(document).ready(function() {
     const gifs = $('#gif-search-input').val();
     $('#gif-search-input').val("");
     const newRequest = new GiphyLand(gifs);
+  
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // COPY OF CODE:
 // $(document).ready(function() {

@@ -18,7 +18,7 @@ export class GiphyLand {
         let b = a + 5;
         for (var i = a; i < b; i++){
           console.log(i + "i");
-          $('.result').append(`<img src="${response.data[i].images.fixed_height.url}">`);
+          $('.result').append(`<img class="gif-place" src="${response.data[i].images.fixed_height.url}">`);
         }
 
         // complete: function(){
