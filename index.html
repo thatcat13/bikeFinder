@@ -7,20 +7,28 @@
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
 
-    <title>GIPH-Y-MATIC</title>
+    <title>Bike Finder</title>
   </head>
   <body>
     <div class="jumbotron">
-      <h1>GIPH-Y-MATIC</h1>
+      <h1>Bike Finder</h1>
     </div>
     <div class="container">
       <form class="search-form" id="search" action="index.html" method="post">
-        <label for="">Find a</label>
-        <input id="gif-search-input" type="text" name="" value="" placeholder="gif">
-        <button id="gif-search-btn" class="btn" type="submit" name="button">Go</button>
+        <label for="">Color of bike:</label>
+        <input id="bike-color-input" type="text" name="" value="" placeholder="color">
+        <label for="">Bike manufacturer:</label>
+        <input id="bike-manufacturer-input" type="text" name="" value="" placeholder="manufacturer">
+        <label for="">Zipcode:</label>
+        <input id="bike-zipcode-input" type="text" name="" value="" placeholder="zipcode">
+        <label for="">Proximity:</label>
+        <input id="bike-proximity-input" type="text" name="" value="" placeholder="proximity">
+        <button id="bike-search-btn" class="btn" type="submit" name="button">Find My Bike</button>
       </form>
-      <div class="result" id="result-display">
+      <div class="results">
+        <ul id="results-display">
 
+        </ul>
       </div>
       <div id="errors">
 
