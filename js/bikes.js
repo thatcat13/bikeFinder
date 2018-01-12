@@ -14,10 +14,9 @@ export class BikeFinder {
         format: 'json'
       },
       success: function(response) {
-        console.log(this.url);
+      console.log(this.url);
       console.log(response);
-
-      response.bikes.map(function(bike){
+      const resultArray = response.bikes.map(function(bike){
 
       });
       success(response);
